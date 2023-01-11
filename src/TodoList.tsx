@@ -2,6 +2,7 @@ import React, {ChangeEvent} from 'react';
 import {FilterValuesType} from "./App";
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
+import {Button} from "@mui/material";
 
 // title - заголовок
 // tasks - список задач
@@ -61,7 +62,7 @@ export const TodoList: React.FC<TodoListPropsType> = ({todoListId, ...props}) =>
         <div>
             <h3>
                 <EditableSpan title={props.title} classes={''} callBack={changeTodoListTitleHandler}/>
-                <button onClick={onClickRemoveTodoListHandler}>x</button>
+                <Button variant="outlined" color="error" size="small" onClick={onClickRemoveTodoListHandler}>delete</Button>
             </h3>
             <AddItemForm addItem={addTask}/>
             <ul>
