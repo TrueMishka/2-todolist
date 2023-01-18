@@ -1,4 +1,6 @@
 import React, {ChangeEvent, FC, KeyboardEvent, useState} from 'react';
+import {IconButton, TextField} from "@mui/material";
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 type PropsType = {
     addItem: (title: string) => void
@@ -29,14 +31,27 @@ export const AddItemForm: FC<PropsType> = (props) => {
 
     return (
         <div>
-            <input
+            {/*<input
                 value={title}
                 onChange={onChangeSetLocalTitleHandler}
                 onKeyDown={onKeyDownAddItemToTodoListHandler}
                 className={errorInputClasses}
+            />*/}
+            <TextField
+                id="outlined-basic"
+                label="New task"
+                variant="outlined"
+                value={title}
+                onChange={onChangeSetLocalTitleHandler}
+                onKeyDown={onKeyDownAddItemToTodoListHandler}
+                error={error}
+                helperText={error && "Please, enter item title"}
             />
-            <button onClick={onClickAddItemToTodoListHandler}>+</button>
-            {errorMessage}
+            {/*<button onClick={onClickAddItemToTodoListHandler}>+</button>*/}
+            <IconButton color="primary" size={"large"}>
+                <ControlPointIcon fontSize="inherit" onClick={onClickAddItemToTodoListHandler}/>
+            </IconButton>
+            {/*{errorMessage}*/}
         </div>
     );
 };

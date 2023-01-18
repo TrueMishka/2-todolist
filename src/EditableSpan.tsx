@@ -1,4 +1,5 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import {Input, Typography} from "@mui/material";
 
 type PropsType = {
     title: string
@@ -20,8 +21,11 @@ export const EditableSpan: React.FC<PropsType> = (props) => {
     }
 
     return (
-        editMode 
+        /*editMode
             ? <input value={title} onChange={onChangeInputHandler} onKeyDown={onKeyDownHandler} onBlur={offEdit} autoFocus/>
+            : <span className={props.classes} onDoubleClick={odEdit}>{props.title}</span>*/
+        editMode
+            ? <Input value={title} onChange={onChangeInputHandler} onKeyDown={onKeyDownHandler} onBlur={offEdit} autoFocus />
             : <span className={props.classes} onDoubleClick={odEdit}>{props.title}</span>
     );
 };

@@ -1,21 +1,20 @@
-.App {
+/*.App {
   padding: 30px;
   display: flex;
 }
 
 .App > div {
   margin-right: 50px;
-}
-
+}*/
 
 .isDone {
   text-decoration: line-through;
 }
-
 .notIsDone {
   font-weight: bold;
 }
-.activeFilter {
+
+/*.activeFilter {
   color: white;
   font-weight: bold;
   background-color: hotpink;
@@ -27,4 +26,4 @@
 .inputError {
   border: 3px solid hotpink;
   outline-color: hotpink;
-}
+}*/
