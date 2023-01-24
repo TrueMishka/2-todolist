@@ -16,7 +16,7 @@ import {Menu} from "@mui/icons-material";
 // Interface
 
 export type FilterValuesType = "all" | "active" | "completed"
-type TodoListType = {
+export type TodoListType = {
     id: string
     title: string
     filter: FilterValuesType
@@ -49,6 +49,7 @@ export function App() {
     })
 
     //BLL:
+
     const removeTodoList = (todoListId: string) => {
         setTodoLists(todoLists.filter(tl => tl.id !== todoListId))
         const copyTasks = {...tasks}
@@ -99,11 +100,12 @@ export function App() {
                 return tasks
         }
     }
+
     const todoListsItems = todoLists.map(tl => {
         const filteredTasksForRender: Array<TaskType> = getFilteredTasksForRender(tasks[tl.id], tl.filter)
         return (
             <Grid item xs={4}>
-                <Paper elevation={3} style={{padding: "20px"}}>
+                <Paper elevation={3} sx={{p: "20px"}}>
                     <TodoList
                         key={tl.id}
                         todoListId={tl.id}
@@ -125,7 +127,7 @@ export function App() {
     })
 
     return (
-        <div className="App">
+        <div>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
