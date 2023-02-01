@@ -9,7 +9,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 // title - заголовок
 // tasks - список задач
 
-type TodoListPropsType = {
+type TodolistPropsType = {
     todoListId: string
     title: string
     filter: FilterValuesType
@@ -31,7 +31,7 @@ export type TaskType = {
     isDone: boolean
 }
 
-export const TodoList: React.FC<TodoListPropsType> = ({todoListId, ...props}) => {
+export const TodoList: React.FC<TodolistPropsType> = ({todoListId, ...props}) => {
     const tasksItems = props.tasks.length
         ? props.tasks.map((task: TaskType) => {
             const onClickRemoveTaskHandler = () => props.removeTask(task.id, todoListId)
