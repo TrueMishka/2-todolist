@@ -1,10 +1,10 @@
 import React, {ChangeEvent} from 'react';
-import {FilterValuesType} from "./App";
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
 import {Button, ButtonGroup, Checkbox, Grid, IconButton} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import ClearIcon from '@mui/icons-material/Clear';
+import {FilterValuesType} from "./store/todoLists-reducer";
 
 // title - заголовок
 // tasks - список задач
