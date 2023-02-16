@@ -3,7 +3,7 @@ import {todolistsReducer, TodolistType} from "./todoLists-reducer";
 import {tasksReducer, TasksStateType} from "./tasks-reducer";
 import {v1} from "uuid";
 
-const todoListId_1: string = v1()
+/*const todoListId_1: string = v1()
 const todoListId_2: string = v1()
 const todoListsInit: TodolistType[] = [
     {id: todoListId_1, title: 'What to learn', filter: 'all'},
@@ -20,7 +20,7 @@ const tasksInit: TasksStateType = {
         {id: v1(), title: "Meat", isDone: true},
         {id: v1(), title: "Juice", isDone: false}
     ]
-}
+}*/
 
 
 const rootReducer = combineReducers({
@@ -28,8 +28,8 @@ const rootReducer = combineReducers({
     tasks: tasksReducer
 })
 
-export const store = legacy_createStore(rootReducer, {todoLists: todoListsInit, tasks: tasksInit})
-//export const store = legacy_createStore(rootReducer)
+//export const store = legacy_createStore(rootReducer, {todoLists: todoListsInit, tasks: tasksInit})
+export const store = legacy_createStore(rootReducer)
 
 export type AppRootStoreType = ReturnType<typeof rootReducer>
 

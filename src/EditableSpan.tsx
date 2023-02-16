@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import React, {ChangeEvent, KeyboardEvent, memo, useState} from 'react';
 import {Input, Typography} from "@mui/material";
 
 type PropsType = {
@@ -7,7 +7,8 @@ type PropsType = {
     callBack: (value: string) => void
 }
 
-export const EditableSpan: React.FC<PropsType> = (props) => {
+export const EditableSpan: React.FC<PropsType> = memo((props) => {
+    console.log('EditableSpan is render')
     const [title, setTitle] = useState(props.title)
     const [editMode, setEditMode] = useState<boolean>(false)
     const odEdit = () => {setEditMode(true)}
@@ -28,4 +29,4 @@ export const EditableSpan: React.FC<PropsType> = (props) => {
             ? <Input value={title} onChange={onChangeInputHandler} onKeyDown={onKeyDownHandler} onBlur={offEdit} autoFocus />
             : <span className={props.classes} onDoubleClick={odEdit}>{props.title}</span>
     );
-};
+})

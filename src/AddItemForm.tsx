@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, KeyboardEvent, useState} from 'react';
+import React, {ChangeEvent, FC, KeyboardEvent, memo, useState} from 'react';
 import {IconButton, TextField} from "@mui/material";
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
@@ -6,7 +6,8 @@ type PropsType = {
     addItem: (title: string) => void
 }
 
-export const AddItemForm: FC<PropsType> = (props) => {
+export const AddItemForm: FC<PropsType> = memo((props) => {
+    console.log('AddItemForm is call')
     const [title, setTitle] = useState<string>("")
     const [error, setError] = useState<boolean>(false)
 
@@ -54,4 +55,4 @@ export const AddItemForm: FC<PropsType> = (props) => {
             {/*{errorMessage}*/}
         </div>
     );
-};
+})
